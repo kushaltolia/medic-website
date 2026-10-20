@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueMedic Pharmacy | Quality Medicine Delivered with Care</title>
+    <!-- Tailwind CSS for responsive layout and modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Merriweather for matching the classic logo typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-blue: #164e9f;
+            --brand-red: #c52228;
+            --whatsapp-green: #25D366;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #f0f5fc;
+            /* Repeating Medical Cross, Pill & Leaf Watermark Pattern */
+            background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M54 36h12v18h18v12H66v18H54V66H36V54h18V36z' fill='%23164e9f' fill-opacity='0.045'/%3E%3Ccircle cx='60' cy='60' r='42' stroke='%23c52228' stroke-opacity='0.035' stroke-width='2'/%3E%3Cpath d='M18 18c6-6 16-6 22 0l6 6c6 6 6 16 0 22s-16 6-22 0l-6-6c-6-6-6-16 0-22z' stroke='%23164e9f' stroke-opacity='0.03' stroke-width='1.5'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .brand-serif {
+            font-family: 'Merriweather', Georgia, serif;
+        }
+
+        /* Smooth Button Hover Lift */
+        .action-btn {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .action-btn:hover {
+            transform: translateY(-2px);
+        }
+        .action-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 text-slate-800">
+
+    <!-- Main Business Card Container -->
+    <main class="w-full max-w-md bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl border border-blue-100 overflow-hidden relative">
+        
+        <!-- Top Dual-Color Brand Accent Bar (Blue & Red from Logo) -->
+        <div class="h-2.5 w-full bg-gradient-to-r from-[#164e9f] via-[#c52228] to-[#164e9f]"></div>
+
+        <div class="p-6 sm:p-8 text-center">
+            
+            <!-- 3. Company Logo Section -->
+            <!-- Automatically tries to load logo.jpg or image_d45068.jpg (cropped neatly to the oval badge), and falls back to the high-precision SVG replica -->
+            <div class="relative mx-auto mb-5 flex justify-center items-center">
+                <div id="real-logo-wrapper" class="w-72 sm:w-80 aspect-[500/360] rounded-[50%] overflow-hidden shadow-[0_12px_28px_rgba(22,78,159,0.28)] border-[3px] border-slate-300 bg-slate-200 flex items-center justify-center">
+                    <img 
+                        id="real-logo-img"
+                        src="logo.jpg" 
+                        alt="TrueMedic Pharmacy Official Logo" 
+                        class="w-full h-full object-cover scale-[1.06] rounded-[50%]"
+                        onerror="if (!this.dataset.triedAlt) { this.dataset.triedAlt = 'true'; this.src = 'image_d45068.jpg'; } else { document.getElementById('real-logo-wrapper').style.display = 'none'; document.getElementById('svg-logo-fallback').style.display = 'block'; }"
+                    >
+                </div>
+
+                <!-- High-Precision Vector Replica of the TrueMedic Pharmacy Metallic Oval Badge -->
+                <div id="svg-logo-fallback" style="display: none;" class="w-80 sm:w-96 max-w-full drop-shadow-[0_12px_24px_rgba(15,40,90,0.25)] select-none">
+                    <svg viewBox="0 0 500 360" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <!-- Brushed Metallic Silver Gradient -->
+                            <linearGradient id="brushedSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#f8fafc" />
+                                <stop offset="22%" stop-color="#e2e8f0" />
+                                <stop offset="45%" stop-color="#f1f5f9" />
+                                <stop offset="55%" stop-color="#cbd5e1" />
+                                <stop offset="78%" stop-color="#f8fafc" />
+                                <stop offset="100%" stop-color="#94a3b8" />
+                            </linearGradient>
+
+                            <!-- Radial Metallic Sheen for Center Oval -->
+                            <radialGradient id="centerSheen" cx="38%" cy="32%" r="70%">
+                                <stop offset="0%" stop-color="#ffffff" />
+                                <stop offset="45%" stop-color="#e5e9f0" />
+                                <stop offset="82%" stop-color="#cbd5e1" />
+                                <stop offset="100%" stop-color="#b4c0cf" />
+                            </radialGradient>
+
+                            <!-- Outer Bevel Chrome Gradient -->
+                            <linearGradient id="chromeRim" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#ffffff" />
+                                <stop offset="50%" stop-color="#cbd5e1" />
+                                <stop offset="100%" stop-color="#64748b" />
+                            </linearGradient>
+
+                            <!-- 3D Royal Blue Gradient (Cross & Text) -->
+                            <linearGradient id="royalBlue3D" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#2b6cb0" />
+                                <stop offset="45%" stop-color="#164e9f" />
+                                <stop offset="100%" stop-color="#0d326c" />
+                            </linearGradient>
+
+                            <!-- 3D Crimson Red Gradient (Leaf, Ring & Text) -->
+                            <linearGradient id="crimsonRed3D" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ef4444" />
+                                <stop offset="45%" stop-color="#c52228" />
+                                <stop offset="100%" stop-color="#7f1d1d" />
+                            </linearGradient>
+
+                            <!-- Ruby Gemstone Gradient -->
+                            <radialGradient id="rubyGem" cx="35%" cy="35%" r="65%">
+                                <stop offset="0%" stop-color="#fda4af" />
+                                <stop offset="40%" stop-color="#e11d48" />
+                                <stop offset="85%" stop-color="#881337" />
+                                <stop offset="100%" stop-color="#4c0519" />
+                            </radialGradient>
+
+                            <!-- Soft 3D Emboss Drop Shadow Filter -->
+                            <filter id="embossShadow" x="-15%" y="-15%" width="130%" height="130%">
+                                <feDropShadow dx="1.5" dy="2.5" stdDeviation="1.8" flood-color="#0f172a" flood-opacity="0.38" />
+                            </filter>
+
+                            <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+                                <feDropShadow dx="0.8" dy="1.2" stdDeviation="0.9" flood-color="#0f172a" flood-opacity="0.28" />
+                            </filter>
+
+                            <!-- Curved Text Path: Top Arc ("Quality Medicine Delivered with Care") -->
+                            <path id="topArcPath" d="M 55,174 A 195,134 0 0,1 445,174" fill="none" />
+
+                            <!-- Curved Text Path: Bottom Arc ("Pharmacy") -->
+                            <path id="bottomArcPath" d="M 90,204 A 168,120 0 0,0 410,204" fill="none" />
+                        </defs>
+
+                        <!-- 1. Outer Metallic Chrome Rim -->
+                        <ellipse cx="250" cy="180" rx="242" ry="170" fill="url(#chromeRim)" stroke="#94a3b8" stroke-width="1.5" />
+
+                        <!-- 2. Outer Royal Blue Border Ring -->
+                        <ellipse cx="250" cy="180" rx="235" ry="163" fill="none" stroke="url(#royalBlue3D)" stroke-width="5.5" />
+
+                        <!-- 3. Main Brushed Metal Track (Between Outer Blue Ring & Inner Red Ring) -->
+                        <ellipse cx="250" cy="180" rx="231" ry="159" fill="url(#brushedSilver)" stroke="#ffffff" stroke-width="1" />
+
+                        <!-- 4. Inner Crimson Red Oval Ring (With 3D Silver Bevel) -->
+                        <ellipse cx="250" cy="180" rx="184" ry="123" fill="none" stroke="#94a3b8" stroke-width="7.5" />
+                        <ellipse cx="250" cy="180" rx="184" ry="123" fill="none" stroke="url(#crimsonRed3D)" stroke-width="4.5" />
+
+                        <!-- 5. Center Brushed Metallic Face -->
+                        <ellipse cx="250" cy="180" rx="180" ry="119" fill="url(#centerSheen)" />
+
+                        <!-- Subtle Brushed Metal Texture Lines -->
+                        <ellipse cx="250" cy="180" rx="172" ry="112" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="0.8" />
+                        <ellipse cx="250" cy="180" rx="208" ry="141" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="0.8" />
+
+                        <!-- 6. Top Curved Text: "Quality Medicine Delivered with Care" -->
+                        <text font-family="Merriweather, Georgia, serif" font-size="20.5" font-weight="700" fill="#164e9f" letter-spacing="0.6" filter="url(#subtleShadow)">
+                            <textPath href="#topArcPath" startOffset="50%" text-anchor="middle">
+                                Quality Medicine Delivered with Care
+                            </textPath>
+                        </text>
+
+                        <!-- 7. Left & Right Faceted Ruby Gemstone Dots -->
+                        <!-- Left Ruby -->
+                        <g transform="translate(56, 136)" filter="url(#subtleShadow)">
+                            <circle cx="0" cy="0" r="8.5" fill="url(#chromeRim)" stroke="#64748b" stroke-width="0.8" />
+                            <circle cx="0" cy="0" r="6.2" fill="url(#rubyGem)" />
+                            <circle cx="-2" cy="-2" r="1.8" fill="#ffffff" fill-opacity="0.75" />
+                        </g>
+                        <!-- Right Ruby -->
+                        <g transform="translate(444, 136)" filter="url(#subtleShadow)">
+                            <circle cx="0" cy="0" r="8.5" fill="url(#chromeRim)" stroke="#64748b" stroke-width="0.8" />
+                            <circle cx="0" cy="0" r="6.2" fill="url(#rubyGem)" />
+                            <circle cx="-2" cy="-2" r="1.8" fill="#ffffff" fill-opacity="0.75" />
+                        </g>
+
+                        <!-- 8. Bottom Curved Decorative Red Lines & "Pharmacy" Text -->
+                        <!-- Left Decorative Red Arc -->
+                        <path d="M 83,262 A 195,136 0 0,0 144,302" fill="none" stroke="url(#crimsonRed3D)" stroke-width="3.2" stroke-linecap="round" filter="url(#subtleShadow)" />
+                        <!-- Right Decorative Red Arc -->
+                        <path d="M 417,262 A 195,136 0 0,1 356,302" fill="none" stroke="url(#crimsonRed3D)" stroke-width="3.2" stroke-linecap="round" filter="url(#subtleShadow)" />
+
+                        <!-- Bottom Arc Text: "Pharmacy" -->
+                        <text font-family="Merriweather, Georgia, serif" font-size="27" font-weight="700" fill="#164e9f" letter-spacing="2.5" filter="url(#subtleShadow)">
+                            <textPath href="#bottomArcPath" startOffset="50%" text-anchor="middle">
+                                Pharmacy
+                            </textPath>
+                        </text>
+
+                        <!-- 9. Center Top Emblem: Crescent Swoosh + 3D Blue Cross + Overlapping Red Leaf -->
+                        <g transform="translate(250, 114)" filter="url(#embossShadow)">
+                            <!-- Crescent Red & Silver Outer Swoosh -->
+                            <path d="M 38,-22 A 45,45 0 1,0 -6,43" fill="none" stroke="#e2e8f0" stroke-width="5.5" stroke-linecap="round" />
+                            <path d="M 38,-22 A 45,45 0 1,0 -6,43" fill="none" stroke="url(#crimsonRed3D)" stroke-width="3.2" stroke-linecap="round" />
+
+                            <!-- 3D Beveled Royal Blue Medical Cross -->
+                            <path d="M -11,-30 H 9 V -12 H 27 V 8 H 9 V 26 H -11 V 8 H -29 V -12 H -11 Z" 
+                                  fill="url(#royalBlue3D)" stroke="#e2e8f0" stroke-width="2.2" stroke-linejoin="round" />
+                            <!-- Inner Highlight on Cross for 3D Bevel Effect -->
+                            <path d="M -8,-27 H 6 V -9 H 24 V 5 H 6 V 23 H -8 V 5 H -26 V -9 H -8 Z" 
+                                  fill="none" stroke="#60a5fa" stroke-opacity="0.55" stroke-width="1" />
+
+                            <!-- 3D Curved Red Leaf Overlapping Bottom-Right of Cross -->
+                            <path d="M -3,34 C -4,10 12,-8 35,-21 C 41,4 28,28 -3,34 Z" 
+                                  fill="url(#crimsonRed3D)" stroke="#f1f5f9" stroke-width="2" stroke-linejoin="round" />
+                            <!-- Central Vein & Ribs on Red Leaf -->
+                            <path d="M -1,31 C 8,16 19,2 32,-16" fill="none" stroke="#fecaca" stroke-width="1.6" stroke-linecap="round" />
+                            <path d="M 8,17 L 19,15 M 14,8 L 25,6 M 20,-1 L 29,-3" fill="none" stroke="#fca5a5" stroke-width="1.2" stroke-linecap="round" />
+                        </g>
+
+                        <!-- 10. Center Main Title: "True Medic" -->
+                        <g filter="url(#embossShadow)">
+                            <text x="250" y="212" text-anchor="middle" font-family="Merriweather, Georgia, serif" font-size="52" font-weight="900" letter-spacing="0.5">
+                                <tspan fill="url(#royalBlue3D)" stroke="#f8fafc" stroke-width="1.8" paint-order="stroke fill">True</tspan>
+                                <tspan dx="6" fill="url(#crimsonRed3D)" stroke="#f8fafc" stroke-width="1.8" paint-order="stroke fill">Medic</tspan>
+                            </text>
+                        </g>
+
+                        <!-- 11. Subtitle: "— PHARMACY —" -->
+                        <g transform="translate(250, 244)" filter="url(#subtleShadow)">
+                            <!-- Left Metallic-Trimmed Blue Bar -->
+                            <rect x="-136" y="-6" width="32" height="3.8" rx="1.5" fill="#164e9f" stroke="#f8fafc" stroke-width="1" />
+                            <!-- Spaced PHARMACY Text -->
+                            <text x="4" y="0" text-anchor="middle" font-family="Inter, sans-serif" font-size="19" font-weight="800" fill="#164e9f" stroke="#f8fafc" stroke-width="0.8" paint-order="stroke fill" letter-spacing="7.5">
+                                PHARMACY
+                            </text>
+                            <!-- Right Metallic-Trimmed Blue Bar -->
+                            <rect x="104" y="-6" width="32" height="3.8" rx="1.5" fill="#164e9f" stroke="#f8fafc" stroke-width="1" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- 1. Name of the Company & Tagline -->
+            <h1 class="brand-serif text-2xl sm:text-3xl font-black tracking-tight text-slate-900">
+                <span class="text-[#164e9f]">True</span> <span class="text-[#c52228]">Medic</span>
+            </h1>
+            <div class="text-xs font-extrabold tracking-[0.28em] text-[#164e9f] uppercase mt-0.5">
+                — PHARMACY —
+            </div>
+            <p class="text-xs sm:text-sm font-medium text-slate-500 italic mt-1.5">
+                "Quality Medicine Delivered with Care"
+            </p>
+
+            <!-- 2. Owner's Name Badge -->
+            <div class="mt-4 inline-flex items-center gap-2 bg-blue-50/90 border border-blue-200/80 px-4 py-1.5 rounded-full">
+                <span class="w-2 h-2 rounded-full bg-[#164e9f]"></span>
+                <p class="text-sm text-slate-700">
+                    Proprietor: <strong class="font-bold text-slate-900">Gaurav Tambi</strong>
+                </p>
+            </div>
+
+            <!-- Action Buttons Group -->
+            <div class="mt-6 space-y-3 text-left">
+                
+                <!-- 4. Clickable Mobile Number (Redirects to Phone Dialer) -->
+                <a href="tel:+917742508948" class="action-btn flex items-center justify-between w-full bg-[#164e9f] hover:bg-[#113d7d] text-white p-4 rounded-2xl shadow-md shadow-blue-900/15 group">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+                            <!-- Phone Icon -->
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="block text-xs uppercase tracking-wider text-blue-200 font-semibold">Tap to Call Now</span>
+                            <span class="text-base sm:text-lg font-bold tracking-wide">+91 77425 08948</span>
+                        </div>
+                    </div>
+                    <svg class="w-5 h-5 text-blue-200 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
+
+                <!-- WhatsApp Business Button -->
+                <a href="https://wa.me/917742508948?text=Hello%20TrueMedic%20Pharmacy%2C%20I%20have%20an%20inquiry." target="_blank" rel="noopener noreferrer" class="action-btn flex items-center justify-between w-full bg-[#1fa855] hover:bg-[#198c46] text-white p-4 rounded-2xl shadow-md shadow-green-900/15 group">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+                            <!-- WhatsApp Icon -->
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.854l-1.529 5.584 5.715-1.499c1.685.918 3.614 1.442 5.669 1.442 6.627 0 12-5.373 12-12 0-6.627-5.373-12-11.384-11.381z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="block text-xs uppercase tracking-wider text-green-100 font-semibold">WhatsApp Business</span>
+                            <span class="text-base sm:text-lg font-bold">Order / Chat on WhatsApp</span>
+                        </div>
+                    </div>
+                    <svg class="w-5 h-5 text-green-100 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
+
+                <!-- Email Button -->
+                <a href="mailto:amsnearyou@gmail.com" class="action-btn flex items-center justify-between w-full bg-slate-50 hover:bg-blue-50/60 text-slate-800 border-2 border-slate-200 hover:border-blue-300 p-3.5 rounded-2xl group">
+                    <div class="flex items-center gap-3.5 min-w-0">
+                        <div class="w-11 h-11 rounded-xl bg-red-50 text-[#c52228] flex items-center justify-center shrink-0">
+                            <!-- Email Icon -->
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </div>
+                        <div class="truncate">
+                            <span class="block text-xs uppercase tracking-wider text-slate-400 font-semibold">Email Us</span>
+                            <span class="text-sm sm:text-base font-semibold text-slate-700 truncate">amsnearyou@gmail.com</span>
+                        </div>
+                    </div>
+                    <svg class="w-5 h-5 text-slate-400 group-hover:text-[#164e9f] group-hover:translate-x-1 transition-all shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
+
+                <!-- 5. Clickable Address & Exact Geo Coordinates Card for Google Maps -->
+                <div class="bg-slate-50 border-2 border-slate-200 rounded-2xl overflow-hidden transition-all hover:border-blue-300">
+                    <a href="https://www.google.com/maps/search/?api=1&query=26.912400,75.787300" target="_blank" rel="noopener noreferrer" class="action-btn flex items-start justify-between w-full p-4 hover:bg-blue-50/50 group">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-11 h-11 rounded-xl bg-blue-100/80 text-[#164e9f] flex items-center justify-center shrink-0 mt-0.5">
+                                <!-- Location Pin Icon -->
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap items-center gap-1.5">
+                                    <span class="text-xs uppercase tracking-wider text-[#164e9f] font-bold">
+                                        Store Location
+                                    </span>
+                                    <span class="text-[10px] font-mono bg-blue-100 text-[#164e9f] px-2 py-0.5 rounded-full font-semibold">
+                                        26.912400° N, 75.787300° E
+                                    </span>
+                                </div>
+                                <p class="text-sm text-slate-700 font-medium leading-snug mt-1.5">
+                                    Basement Floor, Plot No. D 16-17,<br>
+                                    Doctors Bangla, Jhotwara Road,<br>
+                                    Bani Park, Jaipur, Rajasthan - 302016
+                                </p>
+                                <span class="inline-flex items-center gap-1 text-xs font-bold text-[#c52228] group-hover:underline mt-2">
+                                    Open Exact Pin in Google Maps
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Interactive Google Maps Pin Preview -->
+                    <div class="relative w-full h-40 border-t border-slate-200 bg-slate-100">
+                        <iframe 
+                            title="TrueMedic Pharmacy Exact Location Map"
+                            src="https://maps.google.com/maps?q=26.912400,75.787300&z=15&output=embed" 
+                            class="w-full h-full border-0" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <a href="https://www.google.com/maps/search/?api=1&query=26.912400,75.787300" target="_blank" rel="noopener noreferrer" class="absolute bottom-2.5 right-2.5 bg-[#164e9f] hover:bg-[#113d7d] text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md flex items-center gap-1.5 transition-colors">
+                            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                                <path d="M21.71 11.29l-9-9c-.39-.39-1.02-.39-1.41 0l-9 9c-.39.39-.39 1.02 0 1.41l9 9c.39.39 1.02.39 1.41 0l9-9c.39-.38.39-1.01 0-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/>
+                            </svg>
+                            Navigate
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Official GST Registration Footer Badge -->
+            <div class="mt-7 pt-4 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500">
+                <div class="flex items-center gap-1.5 font-medium text-slate-600">
+                    <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Verified Medical Establishment</span>
+                </div>
+                <div class="bg-slate-100 px-3 py-1 rounded-md font-mono text-[11px] font-semibold text-slate-700 tracking-wider border border-slate-200">
+                    GSTIN: 08AGSPT3788N2Z1
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
